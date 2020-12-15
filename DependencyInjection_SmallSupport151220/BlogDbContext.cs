@@ -9,6 +9,7 @@ namespace DependencyInjection_SmallSupport151220
 {
     public class BlogDbContext : DbContext
     {
+        //Config de la base de données
         public BlogDbContext(DbContextOptions<BlogDbContext> options)
               : base(options)
         {

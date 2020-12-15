@@ -25,6 +25,7 @@ namespace DependencyInjection_SmallSupport151220
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {  
+            //Ajout du service d'injection de DbContext
             services.AddDbContext<BlogDbContext>(options =>
                 options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"])
             );
@@ -36,6 +37,7 @@ namespace DependencyInjection_SmallSupport151220
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, BlogDbContext context)
         {
+            //Création de la base de données
             context.Database.EnsureCreated();
             
             if (env.IsDevelopment())

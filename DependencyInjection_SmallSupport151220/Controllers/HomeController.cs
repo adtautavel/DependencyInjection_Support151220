@@ -13,7 +13,7 @@ namespace DependencyInjection_SmallSupport151220.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private BlogDbContext _context;
-
+        //Injection de dépendance à l'aide de l'attribut privé
         public HomeController(ILogger<HomeController> logger, BlogDbContext injectedDbContext)
         {
             _context = injectedDbContext;
